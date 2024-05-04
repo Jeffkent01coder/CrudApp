@@ -72,7 +72,7 @@ class DisplayDataFragment : Fragment(), UserAdapter.OnItemClickListener {
             // Navigate to login screen
             startActivity(Intent(requireContext(), Login::class.java))
             requireActivity().finish()
-        }, 1000) // 1 second delay (adjust as needed)
+        }, 1000)
     }
 
 

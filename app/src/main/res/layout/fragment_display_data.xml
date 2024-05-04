@@ -43,11 +43,11 @@
             android:id="@+id/btnLogout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Logout"
-            android:layout_margin="16dp"
-            android:background="@color/teal_700"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"/>
+            android:backgroundTint="#DA7150"
+            android:layout_marginHorizontal="100dp"
+            />
 
     </LinearLayout>
 
