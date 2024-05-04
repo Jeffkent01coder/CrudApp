@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.crudapp.databinding.UserDataBinding
+import com.example.crudapp.model.GetUserResponse
 import com.example.crudapp.model.UserInformation
 
-class UserAdapter(private val dataList: List<UserInformation>, private val clickListener: OnItemClickListener) :
+class UserAdapter(private val dataList: List<GetUserResponse>, private val clickListener: OnItemClickListener) :
     RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
     interface OnItemClickListener {
@@ -30,9 +31,9 @@ class UserAdapter(private val dataList: List<UserInformation>, private val click
             }
         }
 
-        fun bind(item: UserInformation) {
-            binding.firstName.text = item.firstName
-            binding.lastName.text = item.lastName
+        fun bind(item: GetUserResponse) {
+            binding.firstName.text = item.first_name
+            binding.lastName.text = item.last_name
             binding.age.text = item.age
             binding.town.text = item.town
             binding.gender.text = item.gender

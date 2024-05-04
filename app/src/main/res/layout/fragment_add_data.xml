@@ -83,7 +83,7 @@
                android:id="@+id/lastNameEt"
                android:layout_width="match_parent"
                android:inputType="text"
-               android:hint="Enter Firstname"
+               android:hint="Enter Lastname"
                android:layout_height="wrap_content"/>
 
 
