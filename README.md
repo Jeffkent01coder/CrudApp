@@ -1,4 +1,3 @@
-```markdown
 # Mobile Application
 
 This mobile application is designed to provide users with a convenient way to manage their personal information. It offers a range of features aimed at enhancing user experience and data management.
@@ -29,5 +28,3 @@ To install the mobile application:
 
 After installation, users can create an account, log in, and manage their profile information. They can also perform various tasks such as updating or deleting their information.
 
-
-```
