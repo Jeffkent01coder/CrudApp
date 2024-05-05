@@ -8,8 +8,7 @@ interface ApiService {
 
     // Define the base URL of your Flask app
     companion object {
-        const val BASE_URL = "http://192.168.100.23:5000"
-        const val AUTH_HEADER = "Authorization"
+        const val BASE_URL = "https://jeff.algoskech.co.ke:8000"
     }
 
     // Define the endpoints
@@ -31,14 +30,12 @@ interface ApiService {
     @PUT("update_profile")
     fun updateProfile(@Header("Authorization") token: String, @Body profileData: UserInformation): Call<Void>
 
-    @GET("users")
-    fun getAllUsers(): Call<List<UserInformation>>
+//    @GET("users")
+//    fun getAllUsers(): Call<List<UserInformation>>
 
     @GET("users")
     fun getUser(@Header("Authorization") token: String?): Call<GetUserResponse>
 
-    @POST("users")
-    fun createUser(@Body userData: UserInformation): Call<Void>
 
     @DELETE("users")
     fun deleteUser(@Header("Authorization") authorization: String): Call<Void>
