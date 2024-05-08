@@ -31,7 +31,7 @@ interface ApiService {
     fun updateProfile(@Header("Authorization") token: String, @Body profileData: UserInformation): Call<Void>
 
 //    @GET("users")
-//    fun getAllUsers(): Call<List<UserInformation>>
+//    fun getAllUsers(): Call<List<GetUserResponse>>
 
     @GET("users")
     fun getUser(@Header("Authorization") token: String?): Call<GetUserResponse>

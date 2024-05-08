@@ -45,11 +45,38 @@ class DisplayDataFragment : Fragment(), UserAdapter.OnItemClickListener {
         // Show loading dialog
         showLoadingDialog()
         fetchUserData()
+//        fetchAllUsers()
 
         binding.btnLogout.setOnClickListener {
             logoutUser()
         }
     }
+
+//    private fun fetchAllUsers(){
+//        val call = RetrofitClient.instance.getAllUsers()
+//        call.enqueue(object : Callback<List<GetUserResponse>> {
+//            override fun onResponse(call: Call<List<GetUserResponse>>, response: Response<List<GetUserResponse>>) {
+//                // Dismiss loading dialog on response
+//                dismissLoadingDialog()
+//                Log.d("userdet", "$response")
+//                if (response.isSuccessful) {
+//                    for (item in response.body()!!){
+//                        userArrayList.add(item)
+//                    }
+//                } else {
+//                    showDialog("No user information found. Please update user information!", "Empty User Information")
+//                    updateEmptyState() // Check and update empty state on failure
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<List<GetUserResponse>>, t: Throwable) {
+//                // Dismiss loading dialog on failure
+//                dismissLoadingDialog()
+//                Toast.makeText(requireContext(), "Failed to fetch user data: ${t.message}", Toast.LENGTH_SHORT).show()
+//                updateEmptyState() // Check and update empty state on failure
+//            }
+//        })
+//    }
 
     private fun logoutUser() {
         // Show loading dialog
@@ -76,6 +103,7 @@ class DisplayDataFragment : Fragment(), UserAdapter.OnItemClickListener {
     }
 
 
+
     private fun fetchUserData() {
         val token = requireActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE).getString("token", "")
         val call = RetrofitClient.instance.getUser(token)
@@ -88,7 +116,7 @@ class DisplayDataFragment : Fragment(), UserAdapter.OnItemClickListener {
                     response.body()?.let {
                         userArrayList.add(it)
                         adapter.notifyDataSetChanged()
-                        updateEmptyState() // Check and update empty state after adding data
+                        updateEmptyState()
                     }
                 } else {
                     showDialog("No user information found. Please update user information!", "Empty User Information")
